@@ -1,0 +1,14 @@
+<h1 class="text-center"> Account details</h1>
+
+<div class="row justify-content-center">
+  <div class="col-md-2">
+    <p><strong>First name --- </strong><%= @account.first_name%></p>
+    <p><strong>Last name--- </strong><%= @account.last_name%></p>
+    <p><strong>Gender ---</strong><%= @account.gender%></p>
+    <p><strong>Address --- </strong><%= @account.address%></p>
+    <p><strong>Open-date --- </strong><%= @account.open_date%></p>
+    <br>     
+    <%= link_to "Back", accounts_path,class:"btn btn-primary"%> |
+    <%= link_to "edit", edit_account_path(@account) ,class:"btn btn-primary" %>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<h1 class="text-center"> User Profile</h1>
+<br>
+<div class="row justify-content-center">
+  <div class="col-md-2">
+    <p><strong>First name --- </strong><%= current_user.first_name%></p>
+    <p><strong>Last name--- </strong><%= @user.last_name%></p>
+    <p><strong>Email ---</strong><%= @user.email%></p>
+    <!-- <p><strong>gender ---</strong><#%= @user.account.gender%></p>
+    <p><strong>Address ---</strong><#%= @user.account.address%></p>
+    <p><strong>Open-date ---</strong><#%= @user.account.open_date %></p> -->
+    <br>
+    <td><%= link_to "edit", users_edit_path(@user),class:"btn btn-primary" %></td>
+    <br> 
+
+  </div>
+</div>
