@@ -28,6 +28,10 @@
         <%= form.text_field :open_date , class: "form-control" %>
       </div>
       <br>
+      <div class="form-group">
+        <%= form.select :user_id, User.all.collect {|p| [p.first_name,p.last_name ,p.id ] } %>
+      </div>
+      <br>
       <div class="actions">
         <%= form.submit %>
       </div>

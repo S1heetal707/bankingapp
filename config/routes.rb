@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'transactions/index'
 
   devise_for :users
   root "users#index"
   resources :accounts
+  resources :transactions, only: [:new, :create]
   get 'users/show'
   get 'users/edit'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

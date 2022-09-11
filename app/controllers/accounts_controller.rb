@@ -42,9 +42,7 @@ class AccountsController < ApplicationController
 
   private 
     def set_account_params
-      # params.require(:account).permit(:first_name, :last_name, :address, :gender, :open_date).with_defaults(user: current_user)
-      params[:account].merge!(:user_id => current_user.id.to_s)
-      params.require(:account).permit(:first_name, :last_name, :address, :gender, :open_date, :user_id ,:balance, :account_number).with_defaults(open_date: current_date)
+      params.require(:account).permit(:first_name, :last_name, :address, :gender, :open_date, :balance , :user_id)
     end
 
     def current_date

@@ -20,6 +20,7 @@
         <td><%= account.gender%></td>
         <td><%= account.address%></td>
         <td><%= account.open_date%></td>
+        <td><%= account.balance%></td>
         <td><%= link_to "show", account,class:"btn btn-primary" %></td>
         <td><%= link_to "edit", edit_account_path(account),class:"btn btn-primary" %></td>
         <td><%= link_to "destroy",account,class:"btn btn-primary", data: { turbo_method: :delete,
