@@ -2,8 +2,12 @@
 
 one:
   amount: 1
+  sender_id: 1
+  receiver_id: 1
   account: one
 
 two:
   amount: 1
+  sender_id: 1
+  receiver_id: 1
   account: two

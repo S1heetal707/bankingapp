@@ -6,6 +6,15 @@ class User < ApplicationRecord
   has_one :account
   validates :first_name, presence: true
   validates :last_name, presence: true
+
+  with_options if: :is_admin? do |admin|
+    admin.validates :password, length: { minimum: 7 }
+    admin.validates :email, presence: true
+  end
+
+  def is_admin?
+    self.status == 1
+  end
  
   def set_default_status
     self.status ||= :customer
@@ -16,3 +25,19 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

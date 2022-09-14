@@ -1,22 +1,22 @@
-<h1>Transactions#index</h1>
-<p>Find me in app/views/transactions/index.html.erb</p>
 
 <h1 class="text-center">Make new transactions</h1>
 
 <div class="row justify-content-center">
   <div class="col-md-4">
-    <%= form_with model: @account do |form| %>
+    <%= form_with model: @transaction do |form| %>
       <div class="form-group">
         <%= form.label :amount %><br>
         <%= form.text_field :amount , class: "form-control"  %>
       </div>
       <div class="form-group">
-        <%= form.label :from %><br>
-        <%= form.text_field :account_id, class: "form-control"  %>
+        <%# byebug %>
+        <%= form.hidden_field :sender_id, value: current_user.account.id %>
       </div>
       <div class="form-group">
-        <%= form.label :to %><br>
-        <%= form.select :account_id, Account.all.collect {|p| [p.first_name,p.last_name ,p.id ] } %>
+        <%= form.label :receiver_id %><br>
+        <%#= form.select :receiver_id, Account.all.collect {|p| [p.first_name,p.last_name ,p.id  } %>
+        <%= form.select :receiver_id,Account.where.not(id: current_user.account.id).pluck(:first_name) %>
+        <%#= form.select :receiver_id,Account.where.not {|p| [p.first_name,p.last_name ,p.id ]} %>
       </div>
       <br>
       <div class="actions">

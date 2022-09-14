@@ -42,7 +42,7 @@ class AccountsController < ApplicationController
 
   private 
     def set_account_params
-      params.require(:account).permit(:first_name, :last_name, :address, :gender, :open_date, :balance , :user_id)
+      params.require(:account).permit(:first_name, :last_name, :address, :gender, :open_date, :balance ,:user_id)
     end
 
     def current_date

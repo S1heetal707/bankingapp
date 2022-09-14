@@ -1,9 +1,14 @@
 class Transaction < ApplicationRecord
-  belongs_to :account
+  # before_create :current_balance
+  # this is to change the association name
+  belongs_to :receiver, class_name: "Account", :foreign_key => :receiver_id
 
-  after_create :transfer 
-
-  def transfer
-    self.balance ||= -amount
-  end
+  # def current_balance
+  #   balance = current_user.account.balance
+  #   if self.balance <= 100
+  #     render :new
+  #     flash[:notice] = "Error, try again"
+  #   end
+  # end
 end
+
